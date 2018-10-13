@@ -1,0 +1,32 @@
+\documentclass[a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage[english, russian]{babel}
+\title{Практическая работа №2}
+\author{студент гр8871 Домнин А.В } 
+% Конец преамбулы
+\begin{document}
+	\maketitle
+	\begin{tikzpicture}[scale=2.8]
+	\newcommand{\D}{4}
+	\newcommand{\alfa}{30}
+	\newcommand{\teta}{65}
+	\draw[thin,->] (0,-0.5) -- (0,4.5) node[left] {${\scriptstyle Y}$};
+	\draw[thin,->] (-0.5,0) -- (4.5,0) node[below] {${\scriptstyle X}$};
+	\draw[red,-latex] (0,0)--({\D*cos(\alfa)},{\D*sin{\alfa}}) node[above right] {$\vec{V}$};
+	\draw[thin,blue,dashed] ({\D*cos(\alfa)},{\D*sin{\alfa}})--({\D*cos(\alfa)},0) node[below] {$V_x$};
+	\draw[thin,blue,dashed] ({\D*cos(\alfa)},{\D*sin(\alfa)})--(0,{\D*sin(\alfa)}) node[left] {$V_y$};
+	\draw[<->,violet] (2,0) arc (0:\alfa:2) node[midway, above right] {$\alpha=30$};
+	%Построение смещенной системы координат
+	\draw[thin,->] (0,0)--({\D*cos(\teta)},{\D*sin(\teta)}) node[left] {${Y1}$};
+	\draw[thin,->] (0,0)--({\D*sin(\teta)},{-\D*cos(\teta)}) node[left] {${X1}$};
+	%Построение дуги
+	\draw[<->,violet] (1.5,0) arc (0:\teta:1.5) node[midway, above right] {$\teta$};
+	%Построение смещенного вектора V1
+	\draw[brown,-latex] (0,0)--({\D},0) node[above right] {$\vec{V1}$};
+	%Построение перпиндикуляров
+	\draw[thin,orange,dashed] ({\D},0)--({\D*(1-cos(\teta)*cos(\teta))},-{\D*cos(\teta)*cos(90-\teta)}) node[left] {${V1_x}$};
+	\draw[thick,purple,dashed] ({\D},0)--({\D*(1-cos(90-\teta)*cos(90-\teta)},{\D*cos(\teta)*cos(90-\teta)}) node[left] {${V1_y}$};
+	\end{tikzpicture}
+\end{document}
