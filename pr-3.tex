@@ -4,59 +4,72 @@
 \usepackage[english, russian]{babel}
 \usepackage{tikz}
 \usepackage[european,cuteinductors, smartlabels]{circuitikz}
-\title{РџСЂР°РєС‚РёС‡РµСЃРєР°СЏ СЂР°Р±РѕС‚Р° в„–3}
-\author{СЃС‚СѓРґРµРЅС‚ РіСЂ8871 Р”РѕРјРЅРёРЅ Рђ.Р’ } 
-% РљРѕРЅРµС† РїСЂРµР°РјР±СѓР»С‹
+\title{Практическая работа №3}
+\author{студент гр8871 Домнин А.В } 
+% Конец преамбулы
 \begin{document}
 
 \maketitle
 
-\begin{tikzpicture}[scale=1.4] 
+\begin{tikzpicture}[scale=1.4,yscale=0.8] 
 
 \newcommand{\xa}{2}
 \newcommand{\xb}{-2}
 \newcommand{\xc}{-3}
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РѕСЃРµР№
+
+%Построение осей
 \draw[thin,->](-4,0)--(3,0) node [right] {$Y$};
 \draw[thin,->](0,-5)--(0,3) node [left] {$X$};
 
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РіСЂР°С„РёРєР°
-\draw [domain=-3.2:2.1, help lines, smooth, red] plot ({\x},{(\x-\xa)*(\x-\xb)*(\x-\xc)}) node [below,black] {$f(x)=x^3+3x^2-4x-12$};
+%Построение графика
+\draw [domain=-3.2:2.1, help lines, smooth, yellow] plot ({\x},{(\x-\xa)*(\x-\xb)*(\x-\xc)}) node [right,black] {$f(x)=x^3+3x^2-4x-12$};
 
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№ 1
-\draw [domain=-3.3:-2.9, help lines, smooth, yellow] plot ({\x},{(7.52*\x)+22.816}) node [left,black] {$7.52x+22.816$};
+%Построение касательной 1 для 1 корня
+\draw [domain=-3.3:-2.9, help lines, smooth, black] plot ({\x},{(7.52*\x)+22.816}) node [left,black] {$7.52x+22.816$};
+%Построение касательной 1 для 2 корня
+\draw [domain=-3.3:-2.8, help lines, smooth, brown] plot ({\x},{(6.23*\x)+18.752}) node [left,brown] {$6.23x+18.752$};
+%Построение касательной 1 для 3 корня
+\draw [domain=-3.3:-2.69, help lines, smooth, orange] plot ({\x},{(5.12*\x)+15.361}) node [left,orange] {$5.12x+15.361$};
+%%%%%%%%%%%%%%%
 
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№ 2
+%Построение касательной 2
 \draw [domain=-2.5:-1, help lines, smooth, purple] plot ({\x},{(-5.08*\x)-10.056}) node [right,black] {$-5.08x-10.056$};
 
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№ 3
+%Построение касательной 3
 \draw [domain=1.8:2.2, help lines, smooth, blue] plot ({\x},{(21.83*\x)-43.752}) node [left,black] {$21.83*x-43.752$};
 
-%РџРѕСЃС‚СЂРѕРµРЅРёРµ РїРµСЂРїРёРЅРґРёРєСѓР»СЏСЂРѕРІ
-\draw[thin,blue,dashed] (-3.2,0)--(-3.2,-1.5) node [below] {$X_01=-3.2$};
-\draw[thin,blue,dashed] (-1.8,0)--(-1.8,-1) node [right] {$X_02=-1.8$};
-\draw[thin,blue,dashed] (2.1,0)--(2.1,1.5) node [right] {$X_03=2.1$};
+%Построение перпиндикуляров
+%Построение перпиндикуляров для 1 корня
+\draw[thin,blue,dashed] (-3.2,0)--(-3.2,-1.4) node [below] {$X_{11}=-3.2$};
+\draw[thin,blue,dashed] (-3.1,0)--(-3.1,-0.6) node [below] {$X_{12}=-3.1$};
+\draw[thin,blue,dashed] (-3.01,0)--(-3.01,-0.1) node [below] {$X_{13}=-3.01$};
+%Построение перпиндикуляров для 2 корня
+\draw[thin,blue,dashed] (-1.8,0)--(-1.8,-1) node [right] {$X_{21}=-1.8$};
+%Построение перпиндикуляров для 3 корня
+\draw[thin,blue,dashed] (2.1,0)--(2.1,1.5) node [left] {$X_{31}=2.1$};
 \end{tikzpicture}
 
-Р¤СѓРЅРєС†РёСЏ f(x)=x^3+3x^2-4x-12
+Функция f(x)=x^3+3x^2-4x-12
 
-РџСЂРѕРёРІР·РѕРґРЅР°СЏ С„СѓРЅРєС†РёРё f(x)^/=3x^2+6x-4
+Проивзодная функции f(x)^/=3x^2+6x-4
 
-РўРѕС‡РєР° РҐ_01=-3.2
+Точка X_{11}=-3.2
+Точка X_{12}=-3.1
+Точка X_{13}=-3.05
 
-РЈСЂР°РІРЅРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№
+Уравнение касательной
 
 f(x)=7.52x+22.816
 
-РўРѕС‡РєР° РҐ_02=-1.8
+Точка X_{21}=-1.8
 
-РЈСЂР°РІРЅРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№
+Уравнение касательной
 
 f(x)=-5.08x-10.056
 
-РўРѕС‡РєР° РҐ_03=2.1
+Точка X_{31}=2.1
 
-РЈСЂР°РІРЅРµРЅРёРµ РєР°СЃР°С‚РµР»СЊРЅРѕР№
+Уравнение касательной
 
 f(x)=21.83*x-43.752
 
