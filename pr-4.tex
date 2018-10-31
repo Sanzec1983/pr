@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{tikz}
+\usepackage[european,cuteinductors, smartlabels]{circuitikz}
+\title{Практическая работа №4}
+\author{студент гр8871 Домнин А.В } 
+% Конец преамбулы
+\begin{document}
+\maketitle
+
+\begin{tikzpicture}
+
+%построение 1 шарика
+\begin{scope}[xscale=1.4,yscale=1.4]
+\draw [rounded corners=14pt,color=white, ball color=red,smooth] (0,0) circle (1.7) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] (-2.6,5.2) circle (1.7) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=blue,smooth] (-5.2,0) circle (1.7) node {3};
+%построение центрального шарика  
+\draw [rounded corners=14pt,color=black, ball color=yellow,smooth] (-3.21,1.73) circle (1.8) node {C} ;
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=brown,smooth] (-5.05,1.73) circle (1.7) node {4} ;
+
+\end{scope}
+
+\end{tikzpicture}
+
+\end{document}
