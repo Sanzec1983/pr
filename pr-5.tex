@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{xcolor}
+\usepackage[english, russian]{babel}
+\usepackage{tikz}
+\usepackage[european,cuteinductors, smartlabels]{circuitikz}
+\title{Практическая работа №4}
+\author{студент гр8871 Домнин А.В } 
+% Конец преамбулы
+\begin{document}
+\maketitle
+\newcommand{\D}{10}
+\newcommand{\I}{0.6}
+\newcommand{\B}{0.2}
+Дана функция (ДНФ)
+$$
+F=B\overline{C}D+A\overline{D}+BC
+$$
+Необходимо сделать:
+\begin{itemize}
+    \item таблицу истинности
+    \item СДНФ:Для написания формулы по таблице истинности необходимо выписать конъюкции аргументов тех наборов, на которых функция равна 1, причем аргумент равный 0, входит в конъюкцию с отрицанием, а аргумент, равный 1-- без отрицания. Затем следует соединить все образованные конъюкции знаком дизъюнкции.
+    \item СКНФ:При составлении формулы {\it по} записываем дизъюнкции аргументов тех наборов, где $F=0$. Аргумент в дизъюнкции входит с отрицанием, если в наборе он равен 1. Все составленные дизъюнкции обьединяем опреацией конъюнкциии
+    \item Карты Карно: Прямоугольник делится на равные части столько раз,сколько переменных . Деление осуществляется вертикальным или горизонтальными линиями. Одна половина функции лежит в области, где аргумент равен 0, другая -- где аргумент равен 1. Над областью (или слева от области) где аргумент равен 1, проводится черта и подписывается имя аргумента. Каждый квадрат карты соотвествует набору таблицы.
+\end{itemize}
+%Составляется таблица истинности
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|} \hline
+A & B & C & D & F \\
+\hline
+0 & 0 & 0 & 0 & 0 \\%1
+\hline
+1 & 0 & 0 & 0 & 1 \\%2
+\hline
+1 & 1 & 0 & 0 & 1 \\%3
+\hline
+1 & 1 & 1 & 0 & 1 \\%4
+\hline
+1 & 1 & 1 & 1 & 1 \\%5
+\hline
+0 & 0 & 0 & 1 & 0 \\%6
+\hline
+0 & 0 & 1 & 1 & 0 \\%7
+\hline
+0 & 1 & 1 & 1 & 1 \\%8
+\hline
+1 & 0 & 0 & 1 & 0 \\%9
+\hline
+0 & 1 & 1 & 0 & 1 \\%10
+\hline
+1 & 1 & 0 & 1 & 1 \\%11
+\hline
+1 & 0 & 1 & 1 & 0 \\%12
+\hline
+1 & 0 & 1 & 0 & 1 \\%13
+\hline
+0 & 1 & 0 & 1 & 1 \\%14
+\hline
+0 & 1 & 0 & 0 & 0 \\%15
+\hline
+0 & 0 & 0 & 1 & 0 \\%16
+\hline
+\end{tabular}
+\label{table}
+\caption{Таблица истинности}
+\end{table}
+
+Совершенная формула ДНФ будет выглядеть так
+
+\centering
+$$
+F=A\overline{BCD}\vee AB\overline{CD}\vee ABC\overline{D}\vee ABCD \vee A\overline{BCD} \vee BC\overline{AD} \vee ABD\overline{C} \vee AC\overline{BD}
+\vee BD\overline{AC}
+$$
+Совершенная формула КНФ будет выглядеть так
+\centering
+$$
+F=ABCD \vee ABC\overline{D} \vee AB\overline{CD} \vee BC\overline{AD} \vee B\overline{ACD} \vee ACD\overline{B} \vee ABC\overline{D}
+$$
+%строится таблица Карно
+
+\begin{table}[ht]
+\centering
+\begin{tikz}
+\draw[thin] (0,0)--({\D*1},{\D*0})
+({\D*1},{\D*0})--({\D*1},{\D*(-1)})
+({\D*1},{\D*(-1)})--({\D*0},{\D*(-1)})
+({\D*0},{\D*(-1)})--({\D\D*0},{\D*0})%Общая таблица
+
+
+(0,{\D/(-2)})--({\D},{\D/(-2)})
+({\D/2},{\D*0})--({\D/2},{\D/(-1)})%Разбиение центральной части
+
+(0,{\D/(-4)})--({\D},{\D/(-4)})
+(0,{\D*(-0.75)})--({\D},{\D*(-0.75)})% Горизонтальные
+({\D/(4)},0)--({\D/(4)},{\D*(-1)})
+({\D*(0.75)},0)--({\D*(0.75)},{\D*(-1})% Вертикальные
+%Буквы
+({\D/4},0.5) node [below] {${A}$}%A
+({\D-\D/8},0.5) node [below] {$\overline{A}$}%A
+
+(-0.5,{\D/(-4)}) node [below] {${C}$}%C
+(-0.5,{\D*(-1)+\D/(4)}) node [below] {$\overline{C}$}%C
+
+({\D/8},{\D/(-1)-0.5}) node [below] {${B}$}%B
+({\D-\D/8},{\D/(-1)-0.5}) node [below] {$\overline{B}$}%B
+({\D/2+\D/8},{\D/(-1)-0.5}) node [below] {${B}$}%B
+({\D/4+\D/8},{\D/(-1)-0.5}) node [below] {$\overline{B}$}%B
+
+({\D+0.5},{\D/(-8)}) node [below] {${D}$}%D
+({\D+0.5},{\D/(-2)+\D/8}) node [below] {$\overline{D}$}%D
+({\D+0.5},{\D/(-2)-\D/8}) node [below] {${D}$}%D
+({\D+0.5},{\D/(-1)+\D/(8)}) node [below] {$\overline{D}$}%D
+%Цифарки
+
+({\D/8},{\D/(-8)}) node {${15-ABCD}$}%15
+({\D/8+\D/(4)},{\D/(-8)}) node {$11-ACD\overline{B}$}%11
+({\D/2+\D/(8)},{\D/(-8)}) node {$7-\overline{A}BCD$}%7
+({\D-\D/(8))},{\D/(-8)}) node {$3-\overline{AB}CD$}%3
+
+({\D/8},{\D/(-8)+\D/(-4)}) node {$14-ABC\overline{D}$}%14
+({\D/8+\D/(4)},{\D/(-8)+\D/(-4)}) node {$10-AC\overline{BD}$}%10
+({\D/2+\D/(8)},{\D/(-8)+\D/(-4)}) node {$6-\overline{AD}BC$}%6
+({\D-\D/(8))},{\D/(-8)+\D/(-4)}) node {$2-\overline{ABD}C$}%2
+
+({\D/8},{\D*(-0.5)+\D/(-8)}) node {$13-ABD\overline{C}$}%13
+({\D/8+\D/(4)},{\D*(-0.5)+\D/(-8)}) node {$9-AD\overline{BC}$}%9
+({\D/2+\D/(8)},{\D*(-0.5)+\D/(-8)}) node {$5-\overline{AC}BD$}%5
+({\D-\D/(8))},{\D*(-0.5)+\D/(-8)}) node {$1-\overline{ABD}C$}%1
+
+({\D/8},{-\D+\D/8}) node {$12-AB\overline{CD}$}%12
+({\D/8+\D/(4)},{-\D+\D/8}) node {$8-A\overline{BCD}$}%8
+({\D/2+\D/(8)},{-\D+\D/8}) node {$4-\overline{ACD}B$}%4
+({\D-\D/(8))},{-\D+\D/8}) node {$0-\overline{ABCD}$};%0
+
+
+\end{tikz}
+\caption{Карта Карно}
+\end{table}
+\end{document}
