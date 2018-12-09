@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tikz}
+\usepackage[european,cuteinductors,smartlabels]{circuitikz}
+\usepackage{}
+\title{Практическая работа №6}
+\author{студент:    группы    }
+% Конец преамбулы
+\begin{document}
+\maketitle
+
+\begin{circuitikz}
+%Рисование тр+тир
+\draw (0,0) node [npn,bodydiode]{VT1};
+\draw (0,-3.5) node [npn,bodydiode]{VT2};
+%Рисование тр
+\draw (2,0) node[npn,bodydiode]{VT3};
+\draw (4,0) node[npn,bodydiode]{VT4};
+%Рисование тр
+\draw (2,-3.5) node [npn,bodydiode]{VT5};
+\draw (4,-3.5) node [npn,bodydiode]{VT6};
+%рисование вертикальных линий
+%1 ветка
+\draw (0,-0.3)--(0,-2.8);
+\draw (0,0.3)--(0,2);
+\draw (0,-4)--(0,-5);
+\draw ((0,2.1) [-*];%точка
+\draw ((0,-4.9) [-*];%точка
+%2 ветка
+\draw (2,-0.3)--(2,-2.8);
+\draw (2,0.3)--(2,2);
+\draw (2,-4)--(2,-5);
+\draw ((2,2.1) [-*];%точка
+\draw ((2,-4.9) [-*];%точка
+%3 ветка
+\draw (4,-0.3)--(4,-2.8);
+\draw (4,0.3)--(4,2);
+\draw (4,-4)--(4,-5);
+%Конденсатор
+\draw (-2,-3.5) to[C=C]  (-2,0);
+%Рисование отводоы конденсатора
+\draw (-2,0)--(-2,2);
+\draw (-2,-2)--(-2,-5);
+\draw (-2,2)--(4,2);
+\draw (-2,-5)--(4,-5);
+%Выводы к катушке
+\draw (0,-0.7)--(5,-0.7);
+\draw ((0,-0.6) [-*];%точка
+\draw (2,-1.8)--(5,-1.8);
+\draw (2,-1.7) [-*];%точка
+\draw (4,-2.9)--(5,-2.9);
+\draw ((4,-2.8) [-*];%точка
+%рисование катушки
+\draw (5,-0.7) to [L,l={L1}] (8,-0.7);  
+\draw (5,-1.8) to [L,l={L2}] (8,-1.8);  
+\draw (5,-2.9) to [L,l={L3}] (8,-2.9);  
+%Ноль
+\draw (8,-0.7)-- (8,-2.9);
+\draw ((8,-1.7) [-*];%точка
+\end{circuitikz}
+\end{document}
