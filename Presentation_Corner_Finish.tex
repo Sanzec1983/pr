@@ -1,0 +1,686 @@
+\documentclass{beamer}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english,russian]{babel}
+\usepackage{tikz}
+\usetheme{Madrid}
+\usepackage{csquotes}
+\newcommand{\quotes}[1]{``#1''}
+%https://www.overleaf.com/help/107-how-to-create-a-basic-slideshow-presentation-in-latex-with-beamer#.V8mZiNFEFqM
+
+
+\title{Поворот тела в пространстве}
+\subtitle{Поворот на углы по осям}
+\author{Домнин Александр Вячеславович} 
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+
+
+%%1
+\section{Положение в нулевом положении}
+\begin{frame}
+\frametitle{\small Положение в нулевом положении}
+\end{frame}
+\begin{tikzpicture}
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{0}%2
+\newcommand{\yb}{0}%2
+\newcommand{\xc}{6}%3
+\newcommand{\yc}{0}%3
+\newcommand{\xd}{6}%4
+\newcommand{\yd}{0}%4
+\newcommand{\xe}{6}%5
+\newcommand{\ye}{6}%5
+\newcommand{\xf}{6}%6
+\newcommand{\yf}{6}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+
+%%% 2
+
+\section{Положение обьекта  при повороте на 15 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на15 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 15  градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 1.8508125}%2
+\newcommand{\yb}{1.1117714}%2
+\newcommand{\xc}{3.7472637}%3
+\newcommand{\yc}{2.6117714}%3
+\newcommand{\xd}{5.5980762}%4
+\newcommand{\yd}{1.5}%4
+\newcommand{\xe}{4.4863048}%5
+\newcommand{\ye}{7.2021017}%5
+\newcommand{\xf}{2.6354923}%6
+\newcommand{\yf}{8.3138732}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%3
+
+\section{Положение обьекта  при повороте на 30 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 30 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 30 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 3.75}%2
+\newcommand{\yb}{1.2990381}%2
+\newcommand{\xc}{0.75}%3
+\newcommand{\yc}{3.89711434}%3
+\newcommand{\xd}{4.5}%4
+\newcommand{\yd}{2.5980762}%4
+\newcommand{\xe}{3.2009619}%5
+\newcommand{\ye}{7.8480762}%5
+\newcommand{\xf}{- 0.5490381}%6
+\newcommand{\yf}{9.1471143}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%4
+
+\section{Положение обьекта  при повороте на 45 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 45 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 45 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.1213203}%2
+\newcommand{\yb}{0.8786797}%2
+\newcommand{\xc}{- 2.1213203}%3
+\newcommand{\yc}{3.8786797}%3
+\newcommand{\xd}{3}%4
+\newcommand{\yd}{3}%4
+\newcommand{\xe}{2.1213203}%5
+\newcommand{\ye}{8.1213203}%5
+\newcommand{\xf}{-3}%6
+\newcommand{\yf}{9}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%5
+
+\section{Положение обьекта  при повороте на 60 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 60 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 60 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.7990381}%2
+\newcommand{\yb}{0.3480762}%2
+\newcommand{\xc}{- 4.2990381}%3
+\newcommand{\yc}{2.9461524 }%3
+\newcommand{\xd}{1.5}%4
+\newcommand{\yd}{2.5980762}%4
+\newcommand{\xe}{1.1519238}%5
+\newcommand{\ye}{7.9951905}%5
+\newcommand{\xf}{- 4.6471143}%6
+\newcommand{\yf}{8.3432667}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%6
+
+\section{Положение обьекта  при повороте на 75 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 75 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 75 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.9863048}%2
+\newcommand{\yb}{0.0511113}%2
+\newcommand{\xc}{- 5.584381}%3
+\newcommand{\yc}{1.5511113}%3
+\newcommand{\xd}{0.4019238}%4
+\newcommand{\yd}{1.5}%4
+\newcommand{\xe}{0.3508125}%5
+\newcommand{\ye}{7.3092502}%5
+\newcommand{\xf}{- 5.6354923}%6
+\newcommand{\yf}{7.3603614}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%7
+
+\section{Положение обьекта  при повороте на 90 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 90 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 90 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{-6}%2
+\newcommand{\yb}{0}%2
+\newcommand{\xc}{-6}%3
+\newcommand{\yc}{0}%3
+\newcommand{\xd}{0}%4
+\newcommand{\yd}{0}%4
+\newcommand{\xe}{0}%5
+\newcommand{\ye}{6}%5
+\newcommand{\xf}{-6}%6
+\newcommand{\yf}{6}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%8
+
+\section{Положение обьекта  при повороте на 105 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 105 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 105 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.9863048}%2
+\newcommand{\yb}{- 0.0511113}%2
+\newcommand{\xc}{- 5.584381}%3
+\newcommand{\yc}{- 1.5511113}%3
+\newcommand{\xd}{0.4019238}%4
+\newcommand{\yd}{- 1.5 }%4
+\newcommand{\xe}{0.4530350}%5
+\newcommand{\ye}{4.3092502}%5
+\newcommand{\xf}{- 5.5332697}%6
+\newcommand{\yf}{4.2581389}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%9
+
+\section{Положение обьекта  при повороте на 120 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 120 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 120 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.7990381}%2
+\newcommand{\yb}{- 0.3480762}%2
+\newcommand{\xc}{- 4.2990381}%3
+\newcommand{\yc}{- 2.9461524}%3
+\newcommand{\xd}{1.5}%4
+\newcommand{\yd}{- 2.5980762}%4
+\newcommand{\xe}{1.8480762}%5
+\newcommand{\ye}{2.7990381}%5
+\newcommand{\xf}{- 3.9509619}%6
+\newcommand{\yf}{2.4509619}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%10
+
+\section{Положение обьекта  при повороте на 135 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 135 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 135 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 5.1213203}%2
+\newcommand{\yb}{- 0.8786797}%2
+\newcommand{\xc}{- 2.1213203}%3
+\newcommand{\yc}{- 3.8786797}%3
+\newcommand{\xd}{3}%4
+\newcommand{\yd}{-3}%4
+\newcommand{\xe}{3.8786797}%5
+\newcommand{\ye}{2.1213203}%5
+\newcommand{\xf}{- 1.2426407}%6
+\newcommand{\yf}{1.2426407}%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+
+\end{tikzpicture}
+
+%%11
+
+\section{Положение обьекта  при повороте на 150 градусов по каждой оси}
+\begin{frame}
+\frametitle{\small Положение обьекта  при повороте на 150 градусов по каждой оси}
+\end{frame}
+%\tableofcontents[Положение обьекта  при повороте на 150 градусов по каждой оси]
+
+\begin{tikzpicture}
+
+\newcommand{\rr}{0.2}
+\newcommand{\xa}{0}%1
+\newcommand{\ya}{0}%1
+\newcommand{\xb}{- 3.75}%2
+\newcommand{\yb}{- 1.2990381}%2
+\newcommand{\xc}{0.75}%3
+\newcommand{\yc}{- 3.8971143}%3
+\newcommand{\xd}{4.5}%4
+\newcommand{\yd}{- 2.5980762}%4
+\newcommand{\xe}{5.7990381}%5
+\newcommand{\ye}{2.6519238}%5
+\newcommand{\xf}{2.0490381}%6
+\newcommand{\yf}{1.3528857 }%6
+
+%построение 1 шарика
+
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xa},{\ya}) circle ({\rr}) node {1};
+%построение 2 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xb},{\yb}) circle ({\rr}) node {2};
+%построение 3 шарика
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xc},{\yc}) circle ({\rr}) node {3};
+%построение 4 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xd},{\yd}) circle ({\rr}) node {4};
+%построение 5 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xe},{\ye}) circle ({\rr}) node {5};
+%построение 6 шарика 
+\draw [rounded corners=14pt,color=white, ball color=black,smooth] ({\xf},{\yf}) circle ({\rr}) node {6};
+
+%построение граней
+
+%построение грани 1
+\draw[line width=6,black]  ({\xa},{\ya})--({\xb},{\yb});
+%построение грани 2
+\draw[line width=6,black]  ({\xb},{\yb})--({\xc},{\yc});
+%построение грани 3
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 4
+\draw[line width=6,black]  ({\xc},{\yc})--({\xd},{\yd});
+%построение грани 7
+\draw[line width=6,black]  ({\xa},{\ya})--({\xd},{\yd});
+%построение грани 8
+\draw[line width=6,black]  ({\xc},{\yc})--({\xf},{\yf});
+%построение грани 9
+\draw[line width=6,black]  ({\xd},{\yd})--({\xe},{\ye});
+%построение грани 10
+\draw[line width=6,black]  ({\xe},{\ye})--({\xf},{\yf});
+%\end{scope}
+\end{tikzpicture}
+\clearpage
+\newpage
+
+
+
+
+\section{Литература}
+\begin{thebibliography}{2}
+	\bibitem{Прокшин Н.А.} Конспект лекций по курсу "Информатика".
+	\bibitem{Прокшин Н.А.} Конспект лекций.Практические работы по дисциплине «Информатика»/Сост.: А.Н.Прокшин
+СПб.: Изд-во СПбГЭТУ «ЛЭТИ», 2018, 23 с.
+\end{thebibliography}
+\end{document}
+\end{document}
